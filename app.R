@@ -9,7 +9,7 @@ pacman::p_load(tidyverse,
                zoo)
 
 
-final_data <- readRDS(file = "../saved_data/final_data.rds")
+final_data <- readRDS(file = "final_data.rds")
 chat_names <- final_data %>% pull(chat_name) %>% unique()
 person_names <- final_data %>% pull(sender_name) %>% unique()
 # person_names <- person_names[person_names != "Oliver Lountain"]
