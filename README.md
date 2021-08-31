@@ -3,4 +3,4 @@ My attempt at creating an app that displays analysis of messenger data from grou
 
 *Most commonly used words section needs some work to decipher unusual characters.
 
-App available [here](https://vast-wildwood-24400.herokuapp.com){:target="_blank"}.
+App available [here](https://vast-wildwood-24400.herokuapp.com).
