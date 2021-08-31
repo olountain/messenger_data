@@ -65,37 +65,33 @@ ui <- fluidPage(
     fluidRow(
         column(4,
                wellPanel(
-
-                    textInput("passcode", "Enter passcode", ""),
-                    # verbatimTextOutput("passcode"),
         
+                    condition = "input.passcode == '0'",
+    
+                    radioButtons("display_type",
+                                 "How would you like to filter the data?",
+                                 c("By chat name" = "by_chat",
+                                   "By group members" = "by_members")),
+    
                     conditionalPanel(
-                        condition = "input.passcode == '0'",
-        
-                        radioButtons("display_type",
-                                     "How would you like to filter the data?",
-                                     c("By chat name" = "by_chat",
-                                       "By group members" = "by_members")),
-        
-                        conditionalPanel(
-                            condition = "input.display_type == 'by_chat'",
-                            selectInput("chat",
-                                        label = 'Chat to display',
-                                        choices = chat_names,
-                                        multiple = TRUE)
-                        ),
-        
-                        conditionalPanel(
-                            condition = "input.display_type == 'by_members'",
-                            selectInput("people",
-                                        label = 'People to include',
-                                        choices = person_names,
-                                        multiple = TRUE)
-                        )
-        
-        
-        
+                        condition = "input.display_type == 'by_chat'",
+                        selectInput("chat",
+                                    label = 'Chat to display',
+                                    choices = chat_names,
+                                    multiple = TRUE)
+                    ),
+    
+                    conditionalPanel(
+                        condition = "input.display_type == 'by_members'",
+                        selectInput("people",
+                                    label = 'People to include',
+                                    choices = person_names,
+                                    multiple = TRUE)
                     )
+        
+        
+        
+    
             
                )
 
